@@ -3,6 +3,7 @@ package org.lessons.java.nations;
 import java.math.BigInteger;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -129,7 +130,7 @@ public class Main {
                     }
                     while (rs.next()) {
                         //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
-                        int year = rs.getInt("anno");
+                        Year year = Year.of(rs.getInt("anno"));
                         long population = rs.getLong("population");
                         long gdp = rs.getLong("gross_domestic_product");
                         System.out.println("\nStatistiche dell'anno: " + year);
