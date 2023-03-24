@@ -38,6 +38,10 @@ public class Main {
                         System.out.println("No results with this search.");
                     } else {
                         rs.beforeFirst();
+                        System.out.printf("%6s|", "ID");
+                        System.out.printf("%50s|", "COUNTRY NAME");
+                        System.out.printf("%30s|", "REGION");
+                        System.out.printf("%15s|\n", "CONTINENT");
                     }
 
                     while (rs.next()) {
@@ -46,8 +50,8 @@ public class Main {
                         String regionName = rs.getString("region_name");
                         String continentName = rs.getString("continent_name");
                         // System.out.println(nationName + " " + nationId + " " + regionName + " " + continentName);
-                        System.out.printf("|%50s|", nationName);
                         System.out.printf("%6s|", nationId);
+                        System.out.printf("%50s|", nationName);
                         System.out.printf("%30s|", regionName);
                         System.out.printf("%15s|\n", continentName);
                     }
